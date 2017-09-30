@@ -1,0 +1,107 @@
+* {
+	box-sizing: border-box;
+}
+
+
+body{
+  background-image: url("../images/map.png");
+}
+
+h1 {
+	font-family: verdana, serif;
+	font-style: normal;
+	font-size: 75px;
+	font-weight: 650;
+	color:#cc0066;
+	text-align: center;
+	margin:25px auto;
+	background-image:url("../images/h1.jpg");
+	text-shadow:2px 2px #006600;
+	padding:10px auto;
+	border: solid 5px;
+	border-color: #ff6666;
+}
+	
+p {
+	font-family :Sans;
+	font-size:24px;
+	color: blue;
+	text-align:center;
+	background: #ccccff;
+}
+
+h2 {
+    padding: 20px 0;
+    font-size: 140%;
+    text-align: center;
+    color: #fff;
+    margin: -25px -50px 25px -50px;
+    background: #299dbf;
+}
+
+.header {
+    margin-bottom: 20px;
+    font-style: italic;
+    font-size: 12px;
+   
+}
+
+.time-left {
+	position: fixed;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 30px;
+	width:200px;
+	background: #a7eaf1;
+	font-size: 20px;
+	border-radius: 50%;
+	border: 30px solid #299dbf;
+	font-family: Impact, Charcoal, sans-serif;
+}
+
+.form, .results {
+	display: none;
+}
+
+.quiz-form {	
+	background-color: #a7eaf1;
+	padding: 25px 50px;
+	line-height: 25px;
+	font-size: 20px;
+}
+.question {
+	font-weight: 500;
+}
+
+input[type=radio] {
+	margin-left: 40px;
+}
+
+.score {
+	font-size: 30px;	
+	font-family: 'Aladin', serif;
+	padding: 10px;
+	border-style: solid;
+	border-width: 10px;
+    background-color: #99d4ec;
+}
+
+hr {
+	margin: 10px 0px;
+}
+
+#start, #submit {
+    background-color: #6eb615;
+    color: white;
+    display: block;
+    font-size:24px;
+    height: 40px;
+    line-height: 40px;
+}
+
+#start:hover, #submit:hover {
+	background-color: #299dbf;
+	box-shadow:0px 0px 5px #6eb615;
+}
+
