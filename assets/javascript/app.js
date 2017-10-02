@@ -3,6 +3,7 @@ var inCorrectCount = 0;
 var unAnsweredCount = 0;
 var sec = 30;
 var timer;
+var intervalId;
 
 //Question array
 var quizList = [
@@ -70,23 +71,27 @@ var quizList = [
 
 //Display the timer
 function displayTime(){
-	$(".time-left").html("Time left<br>" + --sec + "<br>seconds");
+	if (sec === 0)
+		timeOut();
+	else
+		$(".time-left").html("Time left<br>" + sec-- + "<br>seconds");
 }
 
 //If Time is up check the result
 function timeOut(){
 	alert("Time's up");
 	checkResult();
+	clearInterval(intervalId);
 }
 
 //Display all questions and set timer
 function displayQuestions(){
 
 	//Start timer.
-	setInterval(displayTime, 1000);
+	intervalId = setInterval(displayTime, 1000);
 
 	//If the time is over
-	timer = setTimeout(timeOut, 1000 * parseInt(sec));
+	//timer = setTimeout(timeOut, 1000 * parseInt(sec));
 
 	var quiz = "";
 	for(var i=0; i<quizList.length; i++){
@@ -145,18 +150,19 @@ function displayResult(correct, incorrect, unanswered){
 
 //On submit Clear timer and check result
 function onSubmit(){
-	clearTimeout(timer);
+	clearTimeout(intervalId);
 	checkResult();
 }
 
 function onRestart(){
-	clearTimeout(timer);
+	clearTimeout(intervalId);
 	$('#restart').hide();
 	
+
 	correctCount = 0;
 	inCorrectCount = 0;
 	unAnsweredCount = 0;
-	clearInterval(timer);
+	//clearInterval(intervalId);
 	sec = 30;
 	timer =0;
 	$(".quiz-form").empty();
